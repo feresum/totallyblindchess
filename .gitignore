@@ -1,0 +1,3 @@
+**/__pycache__
+# Don't bother with ignoring the specific types of detritus from every language
+players/*

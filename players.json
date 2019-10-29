@@ -1,0 +1,14 @@
+/* Player config. This file is JSON but with /*... comments.
+ *
+ * Each key should be the names of a directory under players/ containing the player code.
+ * The optional "build" attribute is a sequence of commands to build the player code.
+ * The "run" attribute is a command to start the player process.
+ * Both "build" and "run" commands are run from the player's directory.
+ */
+
+{
+    "example": {
+        "build": [["gcc", "-O1", "example.c", "-o", "./example"]],
+        "run": ["example"]
+    }
+}
