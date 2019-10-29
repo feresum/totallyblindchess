@@ -17,10 +17,10 @@ with the commands to run, and optionally, build, your program.
 - `python3 controller.py check` checks that the players produce valid and consistent output.
 - `python3 controller.py fight --parallelism=4` starts a tournament with unlimited rounds, 4 concurrent games, and one instance of each player.
 
+For more details on flags, see `controller.py --help` and `controller.py fight --help`.
+
 The `build` and `check` commands exit upon encountering the first error. `fight`, on the other hand,
 forfeits misbehaving processes. So it's a good idea to validate your bot with `check` before starting a tournament.
-
-For more details on flags, see `controller.py --help` and `controller.py fight --help`.
 
 ## Interpreting controller output
 

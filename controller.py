@@ -96,12 +96,11 @@ def check(args):
     for p in players:
         banner('Checking ' + p.name, '=')
         for color in 'wb':
-            seeds = (make_seed(random), make_seed(random))
-            out0, out1 = (sample_output(p, color, seed) for seed in seeds)
+            seed = make_seed(random)
+            out0, out1 = (sample_output(p, color, seed) for _ in range(2))
             if out0 != out1:
                 banner('Failed: ' + p.name, '!')
-                sys.exit('Player produced different output for inputs seeds %s %d and %s %d'
-                         % (color, seeds[0], color, seeds[1]))
+                sys.exit('Player produced two different outputs given args %s %d' % (color, seed))
         banner('OK: ' + p.name, '=')
 
 U = '''controller.py [--players=alice,bob,...] build
