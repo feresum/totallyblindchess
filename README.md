@@ -9,12 +9,13 @@ Controller and players for "Totally Blind Chess" robot tournament.
 
 Suppose you want to create a player named `foo`. Create the directory `players/foo` and write the
 source file(s) therein. Then create an entry with the key `"foo"` in [players.json](players.json)
-with the commands to run,and optionally, build, your program.
+with the commands to run, and optionally, build, your program.
 
 ## Controller usage
-`python3 controller.py build` runs the build command for all players. You should run this before either of the other commands.
-`python3 controller.py check` checks that the players produce valid and consistent output.
-`python3 controller.py fight --parallelism=4` starts a tournament with unlimited rounds, 4 concurrent games, and one instance of each player.
+
+- `python3 controller.py build` runs the build command for all players. You should run this before either of the other commands.
+- `python3 controller.py check` checks that the players produce valid and consistent output.
+- `python3 controller.py fight --parallelism=4` starts a tournament with unlimited rounds, 4 concurrent games, and one instance of each player.
 
 The `build` and `check` commands exit upon encountering the first error. `fight`, on the other hand,
 forfeits misbehaving processes. So it's a good idea to validate your bot with `check` before starting a tournament.
