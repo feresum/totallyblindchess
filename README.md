@@ -1,7 +1,7 @@
 Controller and players for "Totally Blind Chess" robot tournament.
 
 ## Dependencies
-- Python ≥ 3.5.3
+- Python ≥ 3.5.2
 - Dependencies for any bots you wish to run:
     - Bot `example`: gcc
 
