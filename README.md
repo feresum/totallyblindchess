@@ -1,4 +1,4 @@
-Controller and players for "Totally Blind Chess" robot tournament.
+Controller and players for [Totally Blind Chess](https://codegolf.stackexchange.com/questions/195032) robot tournament.
 
 ## Dependencies
 - Python ≥ 3.5.2
