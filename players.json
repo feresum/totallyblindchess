@@ -7,8 +7,14 @@
  */
 
 {
-    "example": {
-        "build": [["gcc", "-O1", "example.c", "-o", "example"]],
-        "run": ["./example"]
+    "vars": {
+        "": "$", /* to write '$$' to escape '$' */
+        "CC": "gcc" /* C compiler */
+    },
+    "players": {
+        "example": {
+            "build": [["$CC$", "-O1", "example.c", "-o", "example"]],
+            "run": ["./example"]
+        }
     }
 }

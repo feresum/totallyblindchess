@@ -13,8 +13,15 @@ def is_cmd_type(x):
 def init_players(path=None):
     if path is None:
         path = os.path.join(base_dir, 'players.json')
+    global vars
     global players
-    players = json.loads(uncomment_json(open(path).read()))
+    config = json.loads(uncomment_json(open(path).read()))
+    vars = config['vars']
+    players = config['players']
+
+def substitute_vars(cmd):
+    assert type(cmd) is list and all(type(y) is str for y in cmd)
+    return [re.sub(r'\$(.*?)\$', lambda m: vars[m.group(1)], arg) for arg in cmd]
 
 def get_player(name):
     conf = players[name]
@@ -23,9 +30,13 @@ def get_player(name):
     assert type(conf) is dict
     assert set(conf) <= {'build', 'run'}
     if 'build' in conf:
-        assert type(conf['build']) is list and all(map(is_cmd_type, conf['build']))
-    assert 'run' in conf and is_cmd_type(conf['run'])
-    return Player(name, dir, conf.get('build', []), conf['run'])
+        assert type(conf['build']) is list
+        build = [substitute_vars(cmd) for cmd in conf['build']]
+    else:
+        build = []
+    assert 'run' in conf
+    run = substitute_vars(conf['run'])
+    return Player(name, dir, build, run)
 
 def start(player, color, seed):
     os.chdir(player.dir)
