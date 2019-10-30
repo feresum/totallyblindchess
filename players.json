@@ -9,12 +9,20 @@
 {
     "vars": {
         "": "$", /* to write '$$' to escape '$' */
-        "CC": "gcc" /* C compiler */
+        "CC": "gcc", /* C compiler */
+        "PYTHON2": "python2"
     },
     "players": {
         "example": {
             "build": [["$CC$", "-O1", "example.c", "-o", "example"]],
             "run": ["./example"]
+        },
+        "Scholar": {
+            "build": [["$CC$", "-O1", "Scholar.c", "-o", "Scholar"]],
+            "run": ["./Scholar"]
+        },
+        "ZombieMarch": {
+            "run": ["$PYTHON2$", "ZombieMarch.py"]
         }
     }
 }

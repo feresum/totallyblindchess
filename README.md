@@ -3,7 +3,8 @@ Controller and players for [Totally Blind Chess](https://codegolf.stackexchange.
 ## Dependencies
 - Python ≥ 3.5.2
 - Dependencies for any bots you wish to run:
-    - Bot `example`: gcc
+    - `example` and `Scholar`: gcc (or another C compiler)
+    - `ZombieMarch`: Python 2
 
 ## Setting up your player
 

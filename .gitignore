@@ -1,3 +1,6 @@
 **/__pycache__
 # Don't bother with ignoring the specific types of detritus from every language
-players/*
+players/*/*
+!players/example/example.c
+!players/Scholar/Scholar.c
+!players/ZombieMarch/ZombieMarch.py
