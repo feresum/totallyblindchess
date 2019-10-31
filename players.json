@@ -23,6 +23,12 @@
         },
         "ZombieMarch": {
             "run": ["$PYTHON2$", "ZombieMarch.py"]
+        },
+        "JustEverything": {
+            "run": ["$PYTHON2$", "JustEverything.py"]
+        },
+        "BluntInstrument": {
+            "run": ["$PYTHON2$", "BluntInstrument.py"]
         }
     }
 }

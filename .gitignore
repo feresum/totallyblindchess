@@ -4,3 +4,5 @@ players/*/*
 !players/example/example.c
 !players/Scholar/Scholar.c
 !players/ZombieMarch/ZombieMarch.py
+!players/JustEverything/JustEverything.py
+!players/BluntInstrument/BluntInstrument.py
