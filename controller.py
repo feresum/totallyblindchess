@@ -67,7 +67,7 @@ def fight(args):
             score[name_w] += {'W':2, 'D':1, 'B':0}[winner]
             score[name_b] += {'W':0, 'D':1, 'B':2}[winner]
             print('%-20s %-20s %s %s %4d' %(name_w, name_b, winner, how, notation.count('.')), file=sys.stderr)
-            print(name_w, name_b, notation, file=move_log)
+            print(name_w, name_b, winner, how, notation, file=move_log)
         banner('Standings after %d cycle%s:' % (c + 1, 's'[:c]), '=')
         for z in sorted(score.items(), key=lambda z:z[1]):
             print('  %-20s %5d' % z)
