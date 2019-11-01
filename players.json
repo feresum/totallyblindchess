@@ -11,6 +11,7 @@
         "": "$", /* to write '$$' to escape '$' */
         "CC": "gcc", /* C compiler */
         "PYTHON2": "python2"
+        /* "PYTHON3": the controller provides its own interpreter as a default */
     },
     "players": {
         "example": {

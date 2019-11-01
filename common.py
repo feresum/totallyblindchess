@@ -1,4 +1,4 @@
-import collections, json, os, re, subprocess
+import collections, json, os, re, subprocess, sys
 
 base_dir = os.path.dirname(__file__)
 players_dir = os.path.join(base_dir, 'players')
@@ -17,6 +17,8 @@ def init_players(path=None):
     global players
     config = json.loads(uncomment_json(open(path).read()))
     vars = config['vars']
+    if 'PYTHON3' not in vars:
+        vars['PYTHON3'] = sys.executable
     players = config['players']
 
 def substitute_vars(cmd):
