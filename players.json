@@ -14,10 +14,10 @@
         /* "PYTHON3": the controller provides its own interpreter as a default */
     },
     "players": {
-        "example": {
+        /* "example": {
             "build": [["$CC$", "-O1", "example.c", "-o", "example"]],
             "run": ["./example"]
-        },
+        }, */
         "Scholar": {
             "build": [["$CC$", "-O1", "Scholar.c", "-o", "Scholar"]],
             "run": ["./Scholar"]
