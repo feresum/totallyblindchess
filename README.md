@@ -18,6 +18,7 @@ with the commands to run, and optionally, build, your program.
 - `python3 controller.py build` runs the build command for all players. You should run this before either of the other commands.
 - `python3 controller.py check` checks that the players produce valid and consistent output.
 - `python3 controller.py fight --parallelism=4` starts a tournament with unlimited rounds, 4 concurrent games, and one instance of each player.
+- `python3 controller.py fight --tune=foo --cycles=10` starts a test session with 10 rounds of player `foo` playing every other player.
 
 For more details on flags, see `controller.py --help` and `controller.py fight --help`.
 
