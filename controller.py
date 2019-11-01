@@ -66,12 +66,13 @@ def fight(args):
             ((winner, how), notation) = map(str.strip, output.decode('ascii').splitlines())
             score[name_w] += {'W':2, 'D':1, 'B':0}[winner]
             score[name_b] += {'W':0, 'D':1, 'B':2}[winner]
-            print('%-20s %-20s %s %s %4d' %(name_w, name_b, winner, how, notation.count('.')), file=sys.stderr)
+            print('%-20s %-20s %s %s %4d' %(name_w, name_b, winner, how, notation.count('.')), file=sys.stderr, flush=True)
             print(name_w, name_b, winner, how, notation, file=move_log)
         banner('Standings after %d cycle%s:' % (c + 1, 's'[:c]), '=')
         for z in sorted(score.items(), key=lambda z:z[1], reverse=True):
             print('  %-20s %5d' % z)
         banner('', '=')
+        sys.stdout.flush()
 
 def sample_output(player, color, seed):
     def fail(msg):
