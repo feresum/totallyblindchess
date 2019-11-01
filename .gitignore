@@ -6,3 +6,5 @@ players/*/*
 !players/ZombieMarch/ZombieMarch.py
 !players/JustEverything/JustEverything.py
 !players/BluntInstrument/BluntInstrument.py
+!players/Backline/Backline.py
+!players/Prickly/Prickly.py

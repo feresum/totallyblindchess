@@ -30,6 +30,13 @@
         },
         "BluntInstrument": {
             "run": ["$PYTHON2$", "BluntInstrument.py"]
+        },
+        "Backline": {
+            /* needs Python 3.6 */
+            "run": ["$PYTHON3$", "Backline.py"]
+        },
+        "Prickly": {
+            "run": ["$PYTHON2$", "Prickly.py"]
         }
     }
 }
