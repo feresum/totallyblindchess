@@ -27,7 +27,7 @@ forfeits misbehaving processes. So it's a good idea to validate your bot with `c
 
 ## Interpreting controller output
 
-This is the ouput for a tournament with `--players=example,example,example` and `--cycles=2`:
+This is the output for a tournament with `--players=example,example,example` and `--cycles=2`:
 
 ```Seed: 3764704884103223436
 example/2            example/1            B f   64
