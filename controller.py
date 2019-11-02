@@ -30,6 +30,8 @@ def build(args):
 
 def fight(args):
     [common.get_player(name) for name in args.players] # Validate
+    if args.tune and args.tune not in args.players:
+        args.players.append(args.tune)
     players = {name + ('/%d' % args.players[:i].count(name)) * (args.players.count(name) > 1): name
                for i, name in enumerate(args.players)}
     task_q = queue.Queue()
@@ -55,7 +57,11 @@ def fight(args):
     print('Seed:', args.seed)
     rando = random.Random(args.seed)
     score = {p: 0 for p in players}
-    matches = [(a, b) for a in players for b in players if a is not b]
+    if args.tune:
+        matches = [(args.tune, b) for b in players if b != args.tune] +\
+                  [(a, args.tune) for a in players if a != args.tune]
+    else:
+        matches = [(a, b) for a in players for b in players if a is not b]
     move_log = open(args.move_log, 'w')
     for c in range(args.cycles):
         rando.shuffle(matches)
@@ -106,7 +112,7 @@ def check(args):
 
 U = '''controller.py [--players=alice,bob,...] build
        controller.py [--players=alice,bob,...] check
-       controller.py [--players=alice,bob,...] fight [--cycles=N] [--parallelism=N] [--move-log=filename]'''
+       controller.py [--players=alice,bob,...] fight [--cycles=N] [--parallelism=N] [--move-log=filename] [--tune=player]'''
 
 def main():
     ap = argparse.ArgumentParser(usage=U)
@@ -121,6 +127,7 @@ def main():
     ap_fight.add_argument('--cycles', type=int, default=1<<60, help='Number of double-round-robin cycles to run')
     ap_fight.add_argument('--parallelism', type=int, default=1, help='Number of games to run concurrently (default: 1)')
     ap_fight.add_argument('--move-log', default=os.devnull, help='File to which to record the moves of the games')
+    ap_fight.add_argument('--tune', default=None, help='Player who will participate in all matches')
     args = ap.parse_args()
     if not hasattr(args, 'func'):
         ap.print_help()
