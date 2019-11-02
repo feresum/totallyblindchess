@@ -10,7 +10,7 @@
     "vars": {
         "": "$", /* to write '$$' to escape '$' */
         "CC": "gcc", /* C compiler */
-        "PYTHON2": "python2"
+        "PYTHON2": "C:/lang/anaconda/python"
         /* "PYTHON3": the controller provides its own interpreter as a default */
     },
     "players": {
@@ -37,6 +37,12 @@
         },
         "Prickly": {
             "run": ["$PYTHON2$", "Prickly.py"]
+        },
+        "Lichess2013-2015": {
+            "run": ["$PYTHON3$", "Lichess2013-2015.py"]
+        },
+        "Pokey": {
+            "run": ["$PYTHON2$", "Pokey.py"]
         }
     }
 }
