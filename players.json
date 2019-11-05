@@ -43,6 +43,9 @@
         },
         "Pokey": {
             "run": ["$PYTHON2$", "Pokey.py"]
+        },
+        "Memorizer": {
+            "run": ["$PYTHON3$", "Memorizer.py"]
         }
     }
 }

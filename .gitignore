@@ -10,3 +10,4 @@ players/*/*
 !players/Prickly/Prickly.py
 !players/Lichess2013-2015/Lichess2013-2015.py
 !players/Pokey/Pokey.py
+!players/Memorizer/Memorizer.py
