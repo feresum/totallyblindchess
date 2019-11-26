@@ -1,6 +1,6 @@
 # Zombie March, by Brilliand
 # https://codegolf.stackexchange.com/a/195059/30688
-# Revision of 2019-10-30 02:17:52Z
+# Revision of 2019-10-30 07:00:24Z
 
 #! /usr/bin/python
 
@@ -50,7 +50,7 @@ iter = 0
 while True:
     iter += 1
     for row in roworder:
-        for move in (moveorder if row*(1+iter*random.random()/4)<7 else random.sample(moveorder7, 8)):
+        for move in (moveorder if row*(1+iter*random.random()/10)<7 else random.sample(moveorder7, 8)):
             for col in colorder:
                 for to in buildmoves((col, row), move):
                     print coord2code((col, row)), coord2code(to)

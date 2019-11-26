@@ -1,6 +1,6 @@
 # Prickly, by Brilliand
 # https://codegolf.stackexchange.com/a/195147/30688
-# Revision of 2019-11-01 10:45:08Z
+# Revision of 2019-11-04 19:55:09Z
 
 #! /usr/bin/python
 
@@ -46,7 +46,7 @@ captures = [m for m in captures if not (6,1) in m]
 for m in captures:
     sendmove(m)
 sendmove(((6,0),(5,2)))
-captures = ([m for m in captures if not (6,0) in m]
+captures = ([m for m in captures if not (6,0) in m and m[0] != (5,2)]
          + [((5,2),(7,1)), ((5,2),(3,1))]
          + [((x,2),(x+1,3)) for x in range(7)]
          + [((x+1,2),(x,3)) for x in range(7)])
@@ -69,7 +69,7 @@ captures = [m for m in captures if not (1,1) in m]
 for m in captures:
     sendmove(m)
 sendmove(((1,0),(2,2)))
-captures = ([m for m in captures if not (1,0) in m]
+captures = ([m for m in captures if not (1,0) in m and m[0] != (2,2)]
          + [((2,2),(0,1)), ((2,2),(4,1))]
          + [((x,4),(x+1,5)) for x in range(7)]
          + [((x+1,4),(x,5)) for x in range(7)])
@@ -128,6 +128,8 @@ for m in long_safe_move((1,1), (1,1), 6):
 captures = [m for m in captures if not (1,1) in m]
 for m in captures:
     sendmove(m)
+sendmove(((6,1),(6,0)))
+sendmove(((7,1),(6,0)))
 for m in long_safe_move((6,1), (-1,1), 6):
     sendmove(m)
 captures = [m for m in captures if not (6,1) in m]
@@ -180,7 +182,7 @@ random.shuffle(movelist)
 
 for (a, b) in movelist:
     if a[1] != 7:
-        print coord2code(a), coord2code(b)
+        sendmove((a, b))
 
 for i in range(8):
     sendmove(((i,7),(i,6)))
@@ -201,7 +203,7 @@ for m in captures:
     sendmove(m)
 for (a, b) in movelist:
     if a[1] < 4 and b[1] < 4:
-        print coord2code(a), coord2code(b)
+        sendmove((a, b))
 for i in range(3):
     for m in long_safe_move((7-2*i,6), (-1,0), 2):
         sendmove(m)
@@ -215,5 +217,5 @@ for i in range(3):
         sendmove(m)
 
 while True:
-    for (a, b) in movelist:
-        print coord2code(a), coord2code(b)
+    for m in movelist:
+        sendmove(m)

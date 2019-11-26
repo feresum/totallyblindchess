@@ -10,6 +10,8 @@
     "vars": {
         "": "$", /* to write '$$' to escape '$' */
         "CC": "gcc", /* C compiler */
+        "JAVAC": "javac", /* Java compiler */
+        "JAVA": "java", /* Java virtual machine */
         "PYTHON2": "C:/lang/anaconda/python"
         /* "PYTHON3": the controller provides its own interpreter as a default */
     },
@@ -46,6 +48,10 @@
         },
         "Memorizer": {
             "run": ["$PYTHON3$", "Memorizer.py"]
+        },
+        "BlindMoveMaker1": {
+            "build": [["$JAVAC$", "BlindMoveMaker1.java"]],
+            "run": ["$JAVA$", "BlindMoveMaker1"]
         }
     }
 }
