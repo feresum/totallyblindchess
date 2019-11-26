@@ -6,6 +6,7 @@ Controller and players for [Totally Blind Chess](https://codegolf.stackexchange.
     - `example` and `Scholar`: gcc (or another C compiler)
     - `ZombieMarch`, `JustEverything`, `BluntInstrument`, `Prickly`, and `Pokey`: Python 2
     - `Backline`: Python ≥ 3.6
+    - `BlindMoveMaker1`: Java (JDK)
 
 ## Setting up your player
 
